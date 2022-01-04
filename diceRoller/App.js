@@ -19,31 +19,64 @@ const App = () => {
   //const uri = DiceFive;
 
   const [uri, setUri] = useState(DiceOne);
-
+  const [uri1, setUri1] = useState(DiceOne);
   const playButtonTapped = () => {
     let randomNumber = Math.floor(Math.random() * 6) + 1;
+    let randomNumber1 = Math.floor(Math.random() * 6) + 1;
     switch (randomNumber) {
       case 1:
         setUri(DiceOne);
+
         break;
       case 2:
         setUri(DiceTwo);
+
         break;
       case 3:
         setUri(DiceThree);
+
         break;
       case 4:
         setUri(DiceFour);
+
         break;
       case 5:
         setUri(DiceFive);
+
         break;
       case 6:
         setUri(DiceSix);
+
         break;
 
       default:
         setUri(DiceOne);
+
+        break;
+    }
+
+    switch (randomNumber1) {
+      case 1:
+        setUri1(DiceOne);
+        break;
+      case 2:
+        setUri1(DiceTwo);
+        break;
+      case 3:
+        setUri1(DiceThree);
+        break;
+      case 4:
+        setUri1(DiceFour);
+        break;
+      case 5:
+        setUri1(DiceFive);
+        break;
+      case 6:
+        setUri1(DiceSix);
+        break;
+
+      default:
+        setUri1(DiceOne);
         break;
     }
   };
@@ -52,6 +85,7 @@ const App = () => {
     <>
       <View style={styles.container}>
         <Image style={styles.image} source={uri} />
+        <Image style={styles.image} source={uri1} />
         <TouchableOpacity onPress={playButtonTapped}>
           <Text style={styles.gamePlayButton}>Play Game</Text>
         </TouchableOpacity>
@@ -72,6 +106,7 @@ const styles = StyleSheet.create({
   image: {
     width: 200,
     height: 200,
+    marginTop: 20,
   },
   gamePlayButton: {
     fontSize: 20,
