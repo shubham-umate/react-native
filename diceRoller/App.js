@@ -84,6 +84,9 @@ const App = () => {
   return (
     <>
       <View style={styles.container}>
+        {uri > 1 && uri1 > 1 && uri === uri1 && (
+          <Text style={styles.winMessage}>Amazing🎉 Rolled same number😎.</Text>
+        )}
         <Image style={styles.image} source={uri} />
         <Image style={styles.image} source={uri1} />
         <TouchableOpacity onPress={playButtonTapped}>
@@ -118,5 +121,11 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     borderWidth: 3,
     fontWeight: 'bold',
+  },
+  winMessage: {
+    fontSize: 20,
+    paddingVertical: 10,
+    color: '#9ACD32',
+    paddingHorizontal: 10,
   },
 });
